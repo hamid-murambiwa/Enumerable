@@ -2,14 +2,15 @@ require_relative 'enumerable'
 
 class MyList
   include MyEnumerable
-  def initialize(*list)
-    @list = list
+  def initialize(*args)
+    @list = []
+    args.each { |arg| @list << arg }
   end
 end
 
 # Verify solution:
 # Create our list
-puts list = MyList.new(1, 2, 3, 4)
+list = MyList.new(1, 2, 3, 4)
 # <MyList: @list=[1, 2, 3, 4]>
 
 # Test #all?
